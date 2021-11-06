@@ -34,6 +34,7 @@ h.description = "descripcion nnn5"
 h.save
 
 puts "Blogs creados: #{Blog.all.count}"
+puts "tarea 1 hecha"
 
 p = Post.new
 p.title = "Titulo 1"
@@ -96,6 +97,7 @@ p.blog = Blog.where(name: "Blog 5").first
 p.save
 
 puts "Post creados: #{Post.all.count}"
+puts "tarea 2 hecha"
 
 # tarea 7.3 crear mensajes
 
@@ -117,7 +119,7 @@ m.save
 
 puts "Mensaje: #{Message.all.count}"
 
-puts "tarea 7.3 hecha"
+puts "tarea 3 hecha"
 
 #tarea 7.4 Obtener todas las publicaciones para el primer blog.
 
@@ -138,9 +140,26 @@ puts "tarea 7.3 hecha"
   p.save
   puts Post.all.first.title
   puts "tarea 6 hecho"
+
+  #tarea 7 Eliminar la tercera publicación (haga que el modelo borre automáticamente todos los mensajes asociados con la tercera publicación cuando la elimines).
   
+f = Post.all.order("created_at asc")[2]
+f.destroy
+puts "N Post eliminado> #{Post.where(id: f.id).count}"
 
+puts "tarea 7 hecha"
 
+#tarea 8 Obtener todos los blog.
 
+puts Blog.all
 
+puts "tarea 8 hecha"
+
+#tarea 9 Obtener todos los blog con id menor a 5.
+
+p = puts Blog.where("id < 5")
+
+puts p
+
+puts "tarea 9 hecha"
 
